@@ -31,4 +31,11 @@ return [
         'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
     ],
 
+    'google' => [
+        'client_id' => env('GOOGLE_DRIVE_CLIENT_ID'),
+        'project_id' => env('GOOGLE_APP_ID'),
+        //'auth_uri' =>
+        'client_secret' => env('GOOGLE_DRIVE_CLIENT_SECRET'),
+        'redirect' => 'http://app-eventos.test.com/auth/callback',
+    ],
 ];
