@@ -44,7 +44,11 @@ class LoginController extends Controller
     //Google Login
     public function redirectToGoogle()
     {
-        return Socialite::driver('google')->stateless()->redirect();
+        //return Socialite::driver('google')->stateless()->redirect();
+        return Socialite::driver('google')
+            /*->scopes()*/
+            ->with(["access_type" => "offline", "prompt" => "consent select_account"])
+            ->redirect();
     }
 
     //Google callback

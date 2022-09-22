@@ -23,11 +23,6 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
-Route::get('/auth/redirect', function () {
-    return Socialite::driver('google')->redirect();
-});
-
 Route::get('/login/google', [App\Http\Controllers\Auth\LoginController::class, 'redirectToGoogle'])->name('login.google');
 Route::get('/auth/callback', [App\Http\Controllers\Auth\LoginController::class, 'handleGoogleCallback']);
 
